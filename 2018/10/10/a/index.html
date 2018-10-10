@@ -143,12 +143,12 @@
 
 
 
-  <meta name="description" content="前端技术  vue.js vue-router(Vue Router 是 Vue.js  官方的路由管理器) axios element-ui  后端技术  springboot mybatis shiro  生成vue项目1 安装node.js ​    具体安装流程还是要去看node.js官网。如果安装完成，请在终端输入npm -v查看是否安装成功。 2、安装VueCLI脚手架 VueCLI能">
+  <meta name="description" content="前端技术  vue.js vue-router(Vue Router 是 Vue.js  官方的路由管理器) axios element-ui webpack  后端技术  springboot mybatis shiro  为什么是springboot？ 首先先来简单的介绍一下Spring，它是目前Java生态中最广为人知、流行的企业级Web框架。不像其他一些框架仅聚焦在某个领域，Spring框">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue前后端分离初体验">
 <meta property="og:url" content="http://yoursite.com/2018/10/10/a/index.html">
 <meta property="og:site_name" content="Tangliang&#39;s Blog">
-<meta property="og:description" content="前端技术  vue.js vue-router(Vue Router 是 Vue.js  官方的路由管理器) axios element-ui  后端技术  springboot mybatis shiro  生成vue项目1 安装node.js ​    具体安装流程还是要去看node.js官网。如果安装完成，请在终端输入npm -v查看是否安装成功。 2、安装VueCLI脚手架 VueCLI能">
+<meta property="og:description" content="前端技术  vue.js vue-router(Vue Router 是 Vue.js  官方的路由管理器) axios element-ui webpack  后端技术  springboot mybatis shiro  为什么是springboot？ 首先先来简单的介绍一下Spring，它是目前Java生态中最广为人知、流行的企业级Web框架。不像其他一些框架仅聚焦在某个领域，Spring框">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2018/10/10/a/捕获.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/10/a/1捕获.jpg">
@@ -156,10 +156,16 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/10/a/temp.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/10/a/data.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/10/10/a/meth.jpg">
-<meta property="og:updated_time" content="2018-10-10T11:09:32.410Z">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/a/3捕获.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/a/7捕获.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/a/4捕获.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/a/20170622173410846.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/a/20170622173833725.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/a/6捕获.jpg">
+<meta property="og:updated_time" content="2018-10-10T11:45:21.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue前后端分离初体验">
-<meta name="twitter:description" content="前端技术  vue.js vue-router(Vue Router 是 Vue.js  官方的路由管理器) axios element-ui  后端技术  springboot mybatis shiro  生成vue项目1 安装node.js ​    具体安装流程还是要去看node.js官网。如果安装完成，请在终端输入npm -v查看是否安装成功。 2、安装VueCLI脚手架 VueCLI能">
+<meta name="twitter:description" content="前端技术  vue.js vue-router(Vue Router 是 Vue.js  官方的路由管理器) axios element-ui webpack  后端技术  springboot mybatis shiro  为什么是springboot？ 首先先来简单的介绍一下Spring，它是目前Java生态中最广为人知、流行的企业级Web框架。不像其他一些框架仅聚焦在某个领域，Spring框">
 <meta name="twitter:image" content="http://yoursite.com/2018/10/10/a/捕获.jpg">
 
 
@@ -439,7 +445,7 @@
                 
               
 
-              <time title="创建时间：2018-10-10 18:21:27 / 修改时间：19:09:32" itemprop="dateCreated datePublished" datetime="2018-10-10T18:21:27+08:00">2018-10-10</time>
+              <time title="创建时间：2018-10-10 18:21:27 / 修改时间：19:45:21" itemprop="dateCreated datePublished" datetime="2018-10-10T18:21:27+08:00">2018-10-10</time>
             
 
             
@@ -477,7 +483,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.4k</span>
+                <span title="本文字数">5.2k</span>
               
 
               
@@ -491,7 +497,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">4 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -518,6 +524,7 @@
 <li><a href="https://router.vuejs.org/zh/" target="_blank" rel="noopener">vue-router</a>(Vue Router 是 Vue.js  官方的路由管理器)</li>
 <li>axios</li>
 <li><a href="http://element.eleme.io/#/zh-CN" target="_blank" rel="noopener">element-ui</a></li>
+<li>webpack</li>
 </ul>
 <p>后端技术</p>
 <ul>
@@ -525,6 +532,29 @@
 <li>mybatis</li>
 <li>shiro</li>
 </ul>
+<p>为什么是springboot？</p>
+<p>首先先来简单的介绍一下Spring，它是目前Java生态中最广为人知、流行的企业级Web框架。不像其他一些框架仅聚焦在某个领域，Spring框架通过其容器化组件式管理及开发，可提供或定制各式各样的功能来满足企业化需求。</p>
+<p>那么相较于Spring，Spring Boot的目标是更加容易的创建Spring应用、建立自动化、最少人为干预的生产级配置，真正意义做到开箱即用，并且对于新用户及Spring平台的用户极易上手，快速开发。</p>
+<p>什么是MVVM？</p>
+<p>回顾一下Web开发的发展简史：</p>
+<ul>
+<li>第一阶段: 网页三剑客，生猛的通过原生javascript直接操作Dom树;</li>
+<li>第二阶段: JQuery诞生，配合前端MVC为代表的Backbone.js, 让我们可以优雅而简单的操作Dom树;</li>
+<li>第三阶段: 后端架构升级为MVC，前后端分工更清晰，前端工程化、ECMAScript规范开始崭露头角;</li>
+<li>第四阶段: 后端架构进入了微服务时代，前端架构不仅升级为MVVM，ES6更是成为目前事实上的标准;</li>
+</ul>
+<p>在这里，我不想过于神化MVVM有多么的先进，JQuery为代表的MVC有多么的落后，但确实MVVM有着很多先进的特性:</p>
+<ul>
+<li>低开销</li>
+<li>易维护</li>
+<li>可重用</li>
+</ul>
+<p>为什么是vue？</p>
+<p>Vue.js是MVVM设计模式中目前最火热的一个前端框架之一，除了性能表现优异之外，与类似React相比，更轻量级、更容易上手。</p>
+<p>通过Vue中的“单文件组件”特性，更灵活的定义组件，不仅使代码结构更清晰，而且能与任何其他组件进行随意组合，更具复用性。</p>
+<p>webpack是什么</p>
+<p>Webpack提供了一整套前端工程自动化的解决方案</p>
+<p>在这里通过一个简单登录小demo来演示前后段分离开发</p>
 <h3 id="生成vue项目"><a href="#生成vue项目" class="headerlink" title="生成vue项目"></a>生成vue项目</h3><p><strong>1 安装node.js</strong></p>
 <p>​    具体安装流程还是要去看<code>node.js</code>官网。如果安装完成，请在终端输入<code>npm -v</code>查看是否安装成功。</p>
 <p><strong>2、安装VueCLI脚手架</strong></p>
@@ -565,7 +595,8 @@
 <p><strong>登录组件 login.vue</strong></p>
 <p><img src="/2018/10/10/a/temp.jpg" alt="temp"></p>
 <p><img src="/2018/10/10/a/data.jpg" alt="data"></p>
-<p><img src="/2018/10/10/a/meth.jpg" alt="meth">每个vue组件都是由三部分组成 <template>模板,<script>js代码,<style>样式</p>
+<p><img src="/2018/10/10/a/meth.jpg" alt="meth"></p>
+<p>每个vue组件都是由三部分组成 </p>
 <p>在上面表单中，我们只需要关注</p>
 <p>v-model=”loginForm.username”</p>
 <p>v-model=”loginForm.password”</p>
@@ -575,36 +606,36 @@
 <p>校验成功后通过axios发送post请求，请求成功，调用<code>.then()</code>回获取到成功的请求结果。index是从后端成功返回的结果，如果登陆成功就调用路由 $router.push({path :’home’})跳转到home组件（核心部分）</p>
 <p>home组件home.vue</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;这是首页&lt;<span class="regexp">/h2&gt;     </span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">        name:"home"</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>前端界面</strong><img src="a\3捕获.jpg" alt="3捕获"></p>
-<p>这时打开前端项目中的index.html<img src="a\7捕获.jpg" alt="7捕获"></p>
+<p><strong>前端界面</strong><img src="/2018/10/10/a/3捕获.jpg" alt="3捕获"></p>
+<p>这时打开前端项目中的index.html<img src="/2018/10/10/a/7捕获.jpg" alt="7捕获"></p>
 <p>首页中没有引入js，css代码，但页面视图是怎样渲染出来的，</p>
 <p>没错就是通过我们.vue组件渲染出来的，是不是很有意思</p>
 <p><strong>跨域请求的问题</strong></p>
 <p><code>node.js</code>提供的web服务器地址是：<code>127.0.0.1:8081</code>，但是我们后端Tomcat服务器的地址是：<code>127.0.0.1:8080</code>，而默认是不能在一个域中访问另一个域中的资源的，所以也就出现了跨域请求的概念。</p>
 <p>解决跨域请求的方式也有很多，我这里在后端controller上加了@CrossOrigin注解</p>
-<h3 id="后端项目"><a href="#后端项目" class="headerlink" title="后端项目"></a>后端项目</h3><p>后端项目就相对比较简单，直接使用MyBatis Generator</p>
+<h3 id="后端项目"><a href="#后端项目" class="headerlink" title="后端项目"></a>后端项目</h3><p>后端项目就相对比较简单，使用MyBatis Generator，编写controller</p>
 <p>MyBatis Generator 是MyBatis 官方出品的一款，用来自动生成MyBatis的 mapper、dao、entity 的框架，让我们省去规律性最强的一部分最基础的代码编写。</p>
 <p>项目目录</p>
-<p><img src="a\4捕获.jpg" alt="4捕获"></p>
+<p><img src="/2018/10/10/a/4捕获.jpg" alt="4捕获"></p>
 <p>Controller</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@CrossOrigin</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserloginMapper userloginMapper;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/login"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(@RequestBody Map map)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String username=map.get(<span class="string">"username"</span>).toString();</span><br><span class="line">        String password =map.get(<span class="string">"password"</span>).toString();</span><br><span class="line"></span><br><span class="line">        Subject subject = SecurityUtils.getSubject();</span><br><span class="line">        UsernamePasswordToken Token = <span class="keyword">new</span> UsernamePasswordToken(username, password);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//执行登录</span></span><br><span class="line">            subject.login(Token);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"index"</span>;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (AuthenticationException e) &#123;</span><br><span class="line">            <span class="keyword">return</span>  <span class="string">"login"</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里使用了shiro安全框架具体请看<a href="http://jinnianshilongnian.iteye.com/blog/2049092">张开涛《跟我学Shiro》</a></p>
-<p>需要注意的是我这里用@RequestBody，之前用@RequestParam来接收前端传过来的参数，居然接受不到，用postman测的没问题，很纳闷</p>
+<p>这里使用了shiro安全框架具体请看<a href="http://jinnianshilongnian.iteye.com/blog/2049092" target="_blank" rel="noopener">张开涛《跟我学Shiro》</a></p>
+<p>需要注意的是我这里用@RequestBody，之前用@RequestParam来接收前端传过来的参数，居然接受不到，用postman发的参数测的没问题，前端发的就接受不到，一脸懵逼</p>
 <p>请求正文为Request Payload,请求头Content-Type: application/json，以这种方式请求，后台用@RequestParam是接收不到参数的，只能用@RequestBody，而axios默认是用Content-Type: application/json，这问题可以在前端解决，也可以在后端解决，在前端解决需要修改axios的默认配置</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/x-www-form-urlencoded'</span>;</span><br></pre></td></tr></table></figure>
 <p>Request Payload请求：</p>
 <p>Request Payload的请求正文格式是json格式的字符串： </p>
 <p>{ “loginName” : “admin”, “password” : “123456” }</p>
-<p><img src="a\20170622173410846.jpg" alt="20170622173410846"></p>
+<p><img src="/2018/10/10/a/20170622173410846.jpg" alt="20170622173410846"></p>
 <p>Form Data请求： </p>
 <p>Form Data的请求正文格式是用key=value&amp;key1=value2格式： </p>
 <p>loginName=admin&amp;password=123456</p>
-<p><img src="a\20170622173833725.jpg" alt="20170622173833725"></p>
+<p><img src="/2018/10/10/a/20170622173833725.jpg" alt="20170622173833725"></p>
 <p>这里是深坑，坑了我好长时间</p>
 <p>请求成功</p>
-<p><img src="a\6捕获.jpg" alt="6捕获"></p>
+<p><img src="/2018/10/10/a/6捕获.jpg" alt="6捕获"></p>
 <p>好的一个简单的前后端分离登录功能就完成了</p>
-</script></template></p>
+
       
     </div>
 
@@ -784,7 +815,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成vue项目"><span class="nav-number">1.</span> <span class="nav-text">生成vue项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端项目"><span class="nav-number">2.</span> <span class="nav-text">前端项目</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成vue项目"><span class="nav-number">1.</span> <span class="nav-text">生成vue项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端项目"><span class="nav-number">2.</span> <span class="nav-text">前端项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后端项目"><span class="nav-number">3.</span> <span class="nav-text">后端项目</span></a></li></ol></div>
             
 
           </div>
@@ -816,7 +847,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">13k</span>
+    <span title="站点总字数">14k</span>
   
 
   
