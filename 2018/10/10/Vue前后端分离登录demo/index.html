@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="[object Object]/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Vue前后端分离登录demo前端技术  vue.js vue-router(Vue Router 是 Vue.js  官方的路由管理器) axios element-ui  后端技术  springboot mybatis shiro  生成vue项目1 安装node.js ​    具体安装流程还是要去看node.js官网。如果安装完成，请在终端输入npm -v查看是否安装成功。 2、安装Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue前后端分离初体验">
+<meta property="og:url" content="http://yoursite.com/2018/10/10/Vue前后端分离登录demo/index.html">
+<meta property="og:site_name" content="Tangliang&#39;s Blog">
+<meta property="og:description" content="Vue前后端分离登录demo前端技术  vue.js vue-router(Vue Router 是 Vue.js  官方的路由管理器) axios element-ui  后端技术  springboot mybatis shiro  生成vue项目1 安装node.js ​    具体安装流程还是要去看node.js官网。如果安装完成，请在终端输入npm -v查看是否安装成功。 2、安装Vue">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="d:/hexo/source/img/捕获.PNG">
+<meta property="og:image" content="d:/hexo/source/img/1捕获.PNG">
+<meta property="og:image" content="d:/hexo/source/img/2捕获.PNG">
+<meta property="og:updated_time" content="2018-10-10T10:08:33.790Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue前后端分离初体验">
+<meta name="twitter:description" content="Vue前后端分离登录demo前端技术  vue.js vue-router(Vue Router 是 Vue.js  官方的路由管理器) axios element-ui  后端技术  springboot mybatis shiro  生成vue项目1 安装node.js ​    具体安装流程还是要去看node.js官网。如果安装完成，请在终端输入npm -v查看是否安装成功。 2、安装Vue">
+<meta name="twitter:image" content="d:/hexo/source/img/捕获.PNG">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tangliang's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/10/Vue前后端分离登录demo/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Vue前后端分离初体验 | Tangliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+  
+  
+</head>
+
+
+
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tangliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">生活的洪流欲让人们窒息，我们却在缺氧的环境中肆意成长</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/10/Vue前后端分离登录demo/">
+
+	
+	
+	
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不会唱丁香花">
+      <meta itemprop="description" content="爱好游戏的码农">
+      <meta itemprop="image" content="/images/a.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tangliang's Blog">
+    </span>
+	
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue前后端分离初体验
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-10 17:42:38 / 修改时间：18:08:33" itemprop="dateCreated datePublished" datetime="2018-10-10T17:42:38+08:00">2018-10-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/嘿嘿嘿/" itemprop="url" rel="index"><span itemprop="name">嘿嘿嘿</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+		  
+		  
+			  <span class="post-meta-divider">|</span>
+			  阅读次数<span id="busuanzi_value_page_pv"></span>
+          
+		  
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+	
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Vue前后端分离登录demo"><a href="#Vue前后端分离登录demo" class="headerlink" title="Vue前后端分离登录demo"></a>Vue前后端分离登录demo</h2><p>前端技术</p>
+<ul>
+<li><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">vue.js</a></li>
+<li><a href="https://router.vuejs.org/zh/" target="_blank" rel="noopener">vue-router</a>(Vue Router 是 Vue.js  官方的路由管理器)</li>
+<li>axios</li>
+<li><a href="http://element.eleme.io/#/zh-CN" target="_blank" rel="noopener">element-ui</a></li>
+</ul>
+<p>后端技术</p>
+<ul>
+<li>springboot</li>
+<li>mybatis</li>
+<li>shiro</li>
+</ul>
+<h3 id="生成vue项目"><a href="#生成vue项目" class="headerlink" title="生成vue项目"></a>生成vue项目</h3><p><strong>1 安装node.js</strong></p>
+<p>​    具体安装流程还是要去看<code>node.js</code>官网。如果安装完成，请在终端输入<code>npm -v</code>查看是否安装成功。</p>
+<p><strong>2、安装VueCLI脚手架</strong></p>
+<p><code>VueCLI</code>能够帮助我们快速搭建一个webpack的项目。</p>
+<p>在已经安装好<code>node.js</code>的前提上，在终端输入：<code>npm install vue-cli -g</code>开始安装VueCLI。如果安装完成，请在终端输入：vue查看是否安装成功</p>
+<p>3 用 cmd 进入到你要存放项目的目录，我把项目放在D盘的VueProject文件夹下，运行 vue init webpack 你的项目名</p>
+<p><img src="D:\hexo\source\img\捕获.PNG" alt="捕获"></p>
+<p>依次为你的项目名称，项目描述，作者，</p>
+<p>nstall vue-router? (Y/n) </p>
+<p>是否安装vue-router，这是官方的路由，大多数情况下都使用</p>
+<p>Use ESLint to lint your code? (Y/n) </p>
+<p>是否使用ESLint管理代码，ESLint是个代码风格管理工具，是用来统一代码风格的，一般项目中都会使用。<br>接下来也是选择题Pick an ESLint preset (Use arrow keys) 选择一个ESLint预设，编写vue项目时的代码风格，直接y回车</p>
+<p>Setup unit tests with Karma + Mocha? (Y/n)</p>
+<p> 是否安装单元测试</p>
+<p>Setup e2e tests with Nightwatch(Y/n)? </p>
+<p>是否安装e2e测试</p>
+<p>建议新手开始除了ESlint选no以外其他全部选yes，为什么？</p>
+<p>开了之后你就会发现多一个空格，多一个换行，都瞎几把标红，很蛋疼</p>
+<p>配置完成之后你会发现项目存放处会多了一个tldemo文件夹，这就是你的前端项目了</p>
+<p><code>cd tldemo</code></p>
+<p><code>npm install</code> :安装所有的模块，如果是安装具体的哪个个模块，在install 后面输入模块的名字即可。</p>
+<p><code>npm run dev</code></p>
+<p><img src="D:\hexo\source\img\1捕获.PNG" alt="1捕获"></p>
+<p>好了，一个vue项目的HelloWord就出来了</p>
+<h3 id="前端项目"><a href="#前端项目" class="headerlink" title="前端项目"></a>前端项目</h3><p>安装element-ui和axios</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install element-ui</span><br><span class="line"></span><br><span class="line">npm install axios</span><br></pre></td></tr></table></figure>
+<p>前端项目目录</p>
+<p><img src="D:\hexo\source\img\2捕获.PNG" alt="2捕获"></p>
+<p><strong>main.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'element-ui/lib/theme-chalk/index.css'</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router/index.js'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line">Vue.prototype.$http = axios</span><br><span class="line">Vue.use(ElementUI)</span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* eslint-disable no-new */</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  render: <span class="function"><span class="params">c</span> =&gt;</span> c(App),</span><br><span class="line">  router: router <span class="comment">//注册router</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>main是webpack入口文件，这里我们引入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br></pre></td></tr></table></figure>
+<p><strong>路由 index.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"><span class="keyword">import</span> home <span class="keyword">from</span> <span class="string">'../components/home'</span></span><br><span class="line"><span class="keyword">import</span> login <span class="keyword">from</span> <span class="string">'../components/login'</span></span><br><span class="line">Vue.use(Router)</span><br><span class="line"><span class="keyword">const</span> routes= [   </span><br><span class="line">    &#123; <span class="attr">path</span> :<span class="string">'/'</span>,<span class="attr">component</span> :login&#125;,</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">'/home'</span>,<span class="attr">component</span>: home&#125;</span><br><span class="line">];</span><br><span class="line"><span class="keyword">const</span> router=<span class="keyword">new</span> Router(&#123;   </span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure>
+<p>如上就配置了，如果你访问<code>localhost:8081/</code>，那么就会自动路由跳转到<code>login.vue</code>组件中，提示我们登录;其中的<code>/home</code>表示，如果登录成功，就跳转到<code>home.vue</code>组件中，相当于登录成功后跳转到后台页面。</p>
+<p><strong>登录组件 login.vue</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;el-form :model=<span class="string">"loginForm"</span> :rules=<span class="string">"rules"</span> ref =<span class="string">"loginForm"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"login-container"</span> label-position=<span class="string">"right"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"login_title"</span>&gt;登录&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">    &lt;el-form-item  prop="username"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;el-input v-model="loginForm.username" auto-complete="off" placeholder="账号"&gt;&lt;/</span>el-input&gt;</span><br><span class="line">    &lt;<span class="regexp">/el-form-item&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;el-form-item  prop="password"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;el-input type="password" v-model="loginForm.password" auto-complete="off" placeholder="密码"&gt;&lt;/</span>el-input&gt;</span><br><span class="line">    &lt;<span class="regexp">/el-form-item&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;el-checkbox class="login_remember" v-model="checked" &gt;记住密码&lt;/</span>el-checkbox&gt;</span><br><span class="line"></span><br><span class="line">    &lt;el-form-item&gt;</span><br><span class="line"></span><br><span class="line">     &lt;el-button type=<span class="string">"primary"</span> @click=<span class="string">"submitForm('loginForm')"</span>&gt;登录&lt;<span class="regexp">/el-button&gt;</span></span><br><span class="line"><span class="regexp">     &lt;el-button @click="resetForm('loginForm')"&gt;重置&lt;/</span>el-button&gt;</span><br><span class="line"></span><br><span class="line">    &lt;<span class="regexp">/el-form-item&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>el-form&gt;   </span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  export default&#123;</span></span><br><span class="line"><span class="regexp">    data()&#123;</span></span><br><span class="line"><span class="regexp">      return &#123;      </span></span><br><span class="line"><span class="regexp">        serverData:&#123;&#125;,</span></span><br><span class="line"><span class="regexp">        loginForm: &#123;</span></span><br><span class="line"><span class="regexp">          username: 'admin',</span></span><br><span class="line"><span class="regexp">          password: '123456'</span></span><br><span class="line"><span class="regexp">        &#125;, </span></span><br><span class="line"><span class="regexp">        checked:true,</span></span><br><span class="line"><span class="regexp">        rules: &#123;</span></span><br><span class="line"><span class="regexp">              username : [</span></span><br><span class="line"><span class="regexp">                &#123; required: true ,message: '请输入用户名' , trigger: 'blur'&#125;,</span></span><br><span class="line"><span class="regexp">                &#123; min: 3,max:10  ,message: '长度在3到10个字符' , trigger: 'blur'&#125;</span></span><br><span class="line"><span class="regexp">              ],</span></span><br><span class="line"><span class="regexp">             password : [</span></span><br><span class="line"><span class="regexp">                &#123; required: true ,message: '请输入密码' , trigger: 'blur'&#125;,</span></span><br><span class="line"><span class="regexp">             ]             </span></span><br><span class="line"><span class="regexp">        &#125;      </span></span><br><span class="line"><span class="regexp">      &#125;;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    methods:&#123;</span></span><br><span class="line"><span class="regexp">       submitForm(loginForm) &#123;</span></span><br><span class="line"><span class="regexp">          </span></span><br><span class="line"><span class="regexp">        this.$refs[loginForm].validate((valid) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">          if (valid) &#123;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">           </span></span><br><span class="line"><span class="regexp">            this.$http.post('http:/</span><span class="regexp">/127.0.0.1:8080/</span>login<span class="string">',</span></span><br><span class="line"><span class="string">            &#123;</span></span><br><span class="line"><span class="string">              username :this.loginForm.username,</span></span><br><span class="line"><span class="string">              password :this.loginForm.password</span></span><br><span class="line"><span class="string">            &#125;, </span></span><br><span class="line"><span class="string">            </span></span><br><span class="line"><span class="string">            ).then(response =&gt; &#123;</span></span><br><span class="line"><span class="string">              console.log(response.data)</span></span><br><span class="line"><span class="string">              if(response.data === '</span>index<span class="string">')&#123;</span></span><br><span class="line"><span class="string">               this.$router.push(&#123;path :'</span>home<span class="string">'&#125;);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">              &#125;else&#123;</span></span><br><span class="line"><span class="string">                console.log("登录失败");</span></span><br><span class="line"><span class="string">              &#125;        </span></span><br><span class="line"><span class="string">            &#125;)</span></span><br><span class="line"><span class="string">            .catch(function (error) &#123;</span></span><br><span class="line"><span class="string">              console.log(error)</span></span><br><span class="line"><span class="string">            &#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">          &#125; else &#123;</span></span><br><span class="line"><span class="string">            console.log('</span>error submit!!<span class="string">');</span></span><br><span class="line"><span class="string">            return false;</span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">        &#125;);</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      resetForm(loginForm) &#123;</span></span><br><span class="line"><span class="string">        this.$refs[loginForm].resetFields();</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &#125;        </span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;style&gt;</span></span><br><span class="line"><span class="string">  .login-container &#123;</span></span><br><span class="line"><span class="string">    border-radius: 15px;</span></span><br><span class="line"><span class="string">    background-clip: padding-box;</span></span><br><span class="line"><span class="string">    margin: 180px auto;</span></span><br><span class="line"><span class="string">    width: 350px;</span></span><br><span class="line"><span class="string">    padding: 35px 35px 15px 35px;</span></span><br><span class="line"><span class="string">    background: #fff;</span></span><br><span class="line"><span class="string">    border: 1px solid #eaeaea;</span></span><br><span class="line"><span class="string">    box-shadow: 0 0 25px #cac6c6;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  .login_title &#123;</span></span><br><span class="line"><span class="string">    margin: 0px auto 40px auto;</span></span><br><span class="line"><span class="string">    text-align: center;</span></span><br><span class="line"><span class="string">    color: #505458;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  .login_remember &#123;</span></span><br><span class="line"><span class="string">    margin: 0px 0px 35px 0px;</span></span><br><span class="line"><span class="string">    text-align: left;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  .el-main &#123;</span></span><br><span class="line"><span class="string">    background-color: #E9EEF3;</span></span><br><span class="line"><span class="string">    color: #333;</span></span><br><span class="line"><span class="string">    text-align: center;</span></span><br><span class="line"><span class="string">   </span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  .el-header, .el-footer &#123;</span></span><br><span class="line"><span class="string">    background-color: #B3C0D1;</span></span><br><span class="line"><span class="string">    color: #333;</span></span><br><span class="line"><span class="string">    text-align: center;</span></span><br><span class="line"><span class="string">    line-height: 60px;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  .el-aside &#123;</span></span><br><span class="line"><span class="string">    background-color: #D3DCE6;</span></span><br><span class="line"><span class="string">    color: #333;</span></span><br><span class="line"><span class="string">    text-align: center;</span></span><br><span class="line"><span class="string">    line-height: 200px;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&lt;/style&gt;</span></span><br></pre></td></tr></table></figure>
+<p>每个vue组件都是由三部分组成 <template>模板,<script>js代码,<style>样式</p>
+<p>在上面表单中，我们只需要关注</p>
+<p>v-model=”loginForm.username”</p>
+<p>v-model=”loginForm.password”</p>
+<p>@click=”submitForm(‘loginForm’)”</p>
+<p>@click=”resetForm(‘loginForm’)”</p>
+<p>首先this.$refs[loginForm].validate((valid)是element-ui提供的表单校验逻辑，</p>
+<p>校验成功后通过axios发送post请求，请求成功，调用<code>.then()</code>回获取到成功的请求结果。index是从后端成功返回的结果，如果登陆成功就调用路由 $router.push({path :’home’})跳转到home组件（核心部分）</p>
+<p>home组件home.vue</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;这是首页&lt;<span class="regexp">/h2&gt;     </span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">        name:"home"</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>前端界面</strong><img src="D:\hexo\source\img\3捕获.PNG" alt="3捕获"></p>
+<p>这时打开前端项目中的index.html<img src="D:\hexo\source\img\7捕获.PNG" alt="7捕获"></p>
+<p>首页中没有引入js，css代码，但页面视图是怎样渲染出来的，</p>
+<p>没错就是通过我们.vue组件渲染出来的，是不是很有意思</p>
+<p><strong>跨域请求的问题</strong></p>
+<p><code>node.js</code>提供的web服务器地址是：<code>127.0.0.1:8081</code>，但是我们后端Tomcat服务器的地址是：<code>127.0.0.1:8080</code>，而默认是不能在一个域中访问另一个域中的资源的，所以也就出现了跨域请求的概念。</p>
+<p>解决跨域请求的方式也有很多，我这里在后端controller上加了@CrossOrigin注解</p>
+<h3 id="后端项目"><a href="#后端项目" class="headerlink" title="后端项目"></a>后端项目</h3><p>后端项目就相对比较简单，直接使用MyBatis Generator</p>
+<p>MyBatis Generator 是MyBatis 官方出品的一款，用来自动生成MyBatis的 mapper、dao、entity 的框架，让我们省去规律性最强的一部分最基础的代码编写。</p>
+<p>项目目录</p>
+<p><img src="D:\hexo\source\img\4捕获.PNG" alt="4捕获"></p>
+<p>Controller</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@CrossOrigin</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserloginMapper userloginMapper;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/login"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(@RequestBody Map map)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String username=map.get(<span class="string">"username"</span>).toString();</span><br><span class="line">        String password =map.get(<span class="string">"password"</span>).toString();</span><br><span class="line"></span><br><span class="line">        Subject subject = SecurityUtils.getSubject();</span><br><span class="line">        UsernamePasswordToken Token = <span class="keyword">new</span> UsernamePasswordToken(username, password);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//执行登录</span></span><br><span class="line">            subject.login(Token);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"index"</span>;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (AuthenticationException e) &#123;</span><br><span class="line">            <span class="keyword">return</span>  <span class="string">"login"</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里使用了shiro安全框架具体请看<a href="http://jinnianshilongnian.iteye.com/blog/2049092">张开涛《跟我学Shiro》</a></p>
+<p>需要注意的是我这里用@RequestBody，之前用@RequestParam来接收前端传过来的参数，居然接受不到，用postman测的没问题，很纳闷</p>
+<p>请求正文为Request Payload,请求头Content-Type: application/json，以这种方式请求，后台用@RequestParam是接收不到参数的，只能用@RequestBody，而axios默认是用Content-Type: application/json，这问题可以在前端解决，也可以在后端解决，在前端解决需要修改axios的默认配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/x-www-form-urlencoded'</span>;</span><br></pre></td></tr></table></figure>
+<p>Request Payload请求：</p>
+<p>Request Payload的请求正文格式是json格式的字符串： </p>
+<p>{ “loginName” : “admin”, “password” : “123456” }</p>
+<p><img src="D:\hexo\source\img\20170622173410846.png" alt="20170622173410846"></p>
+<p>Form Data请求： </p>
+<p>Form Data的请求正文格式是用key=value&amp;key1=value2格式： </p>
+<p>loginName=admin&amp;password=123456</p>
+<p><img src="D:\hexo\source\img\20170622173833725.png" alt="20170622173833725"></p>
+<p>这里是深坑，坑了我好长时间</p>
+<p>请求成功</p>
+<p><img src="D:\hexo\source\img\6捕获.PNG" alt="6捕获"></p>
+<p>好的一个简单的前后端分离登录功能就完成了</p>
+</script></template></p>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/11/linux基础/" rel="next" title="linux基础">
+                <i class="fa fa-chevron-left"></i> linux基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/a.jpg"
+                alt="不会唱丁香花" />
+            
+              <p class="site-author-name" itemprop="name">不会唱丁香花</p>
+              <p class="site-description motion-element" itemprop="description">爱好游戏的码农</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ToyLing" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue前后端分离登录demo"><span class="nav-number">1.</span> <span class="nav-text">Vue前后端分离登录demo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成vue项目"><span class="nav-number">1.1.</span> <span class="nav-text">生成vue项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端项目"><span class="nav-number">1.2.</span> <span class="nav-text">前端项目</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不会唱丁香花</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">16k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">15 分钟</span>
+  
+</div>
+
+
+
+
+
+
+
+
+<div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+  本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+  <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+  有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+   
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script> 
+  
+</body>
+</html>
